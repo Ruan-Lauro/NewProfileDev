@@ -1,0 +1,269 @@
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-generalsans: "General Sans", sans-serif;
+
+  --color-black-200: #171717;
+  --color-black-300: #252525;
+  --color-black-500: #3a3a3a;
+  --color-black-600: #4a4a4a;
+
+  --color-white-500: #eeeeee;
+  --color-white-600: #dddddd;
+  --color-white-800: #ffffff;
+
+   --color-primary: #0071e3;
+  --color-dark-100: #86868b;
+  --color-dark-200: #2e2e30;
+  --color-light-100: #adb5bd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background:  #ededed;
+    --foreground: #0a0a0a;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+section,
+[id="skills"] {
+  scroll-margin-top: 5rem;
+}
+
+body {
+  background: #fff;
+  font-family: "General Sans", sans-serif;
+}
+
+@layer utilities {
+  .c-space {
+    @apply px-5 sm:px-10;
+  }
+
+  .head-text {
+    @apply text-3xl font-semibold sm:text-4xl;
+  }
+
+  .nav-ul {
+    @apply relative z-20 flex flex-col items-center gap-4 sm:flex-row md:gap-6;
+  }
+
+  .nav-li {
+    @apply font-generalsans py-2 text-black/80 sm:text-neutral-600 hover:text-black/80 max-sm:w-full max-sm:rounded-md max-sm:px-5 max-sm:hover:bg-white;
+  }
+
+  .nav-li_a {
+    @apply text-lg transition-colors hover:text-black/80 md:text-base;
+  }
+
+  .nav-sidebar {
+    @apply absolute left-0 right-0 z-20 mx-auto block overflow-hidden bg-[#F5F4F0] backdrop-blur-sm transition-all duration-300 ease-in-out sm:hidden shadow-sm rounded-b-md;
+  }
+
+  .text-gray_gradient {
+    @apply bg-linear-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
+  }
+
+    /* contact section */
+  .contact-container {
+    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
+  }
+
+  .field-label {
+    @apply text-lg text-neutral-600;
+  }
+
+  .field-input {
+    @apply w-full bg-black/80 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800  focus:outline-none;
+  }
+
+  .field-btn {
+    @apply bg-black-500 px-5 py-2 min-h-12 rounded-lg  flex justify-center items-center text-lg text-white gap-3;
+  }
+
+  .field-btn_arrow {
+    @apply w-2.5 h-2.5 object-contain invert brightness-0;
+  }
+
+  /*  footer */
+  .social-icon {
+    @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-black-200;
+  }
+
+}
+
+
+/*Others*/
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility flex-between {
+  @apply flex items-center justify-between;
+}
+
+@utility col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+@utility abs-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility h3-semibold {
+  @apply font-semibold text-xl text-dark-100;
+}
+
+@utility base-semibold {
+  @apply font-semibold text-base text-dark-100;
+}
+
+@utility small-medium {
+  @apply font-medium text-xs;
+}
+
+@layer components {
+
+  #projects {
+    @apply relative flex h-full w-dvw flex-col items-center overflow-hidden pt-20 lg:pt-20;
+
+    h2 {
+      @apply max-w-2xl text-center text-3xl font-semibold text-neutral-600 lg:text-6xl;
+    }
+
+    .wrapper {
+      @apply relative h-[50vh] w-7xl 2xl:h-screen 2xl:w-[100rem];
+
+      img {
+        @apply max-w-40 object-cover object-center lg:max-w-108 2xl:max-w-140;
+      }
+
+      .p1 {
+        @apply absolute bottom-1/2 left-[23%] z-[1] max-sm:left-[36%] max-lg:top-[30%] max-lg:left-[30%];
+      }
+
+      .p2 {
+        @apply absolute right-[17%] bottom-[40%] z-[3] max-sm:right-[34%] max-lg:right-[25%];
+      }
+
+      .p3 {
+        @apply absolute right-[15%] bottom-1/4 z-[2] max-sm:right-[32%] max-lg:right-[23%];
+      }
+
+      .p4 {
+        @apply absolute right-[10%] bottom-[15%] z-[1] max-sm:right-[35%] max-sm:top-[75%] max-lg:right-[25%] max-lg:top-[80%];
+      }
+
+      .p5 {
+        @apply absolute bottom-[20%] left-1/2 -translate-x-1/2 scale-150;
+      }
+
+      .p6 {
+        @apply absolute bottom-1/4 left-1/4 z-[2] max-sm:left-[35%];
+      }
+
+      .p7 {
+        @apply absolute bottom-[5%] left-[15%] z-3 max-sm:left-[36%]  max-lg:left-[30%] max-lg:bottom-[-5%];
+      }
+    }
+
+    .content {
+      @apply mx-auto mt-24 max-w-xl;
+
+      p {
+        @apply base-semibold translate-y-10 px-5 sm:text-center text-justify opacity-0;
+
+        @variant lg {
+          @apply h3-semibold;
+        }
+      }
+    }
+  }
+
+  #experience {
+    @apply relative md:pt-40 max-md:pb-100;
+
+    h2 {
+      @apply mx-auto max-w-3xl text-center text-3xl font-semibold text-neutral-600 lg:text-6xl;
+    }
+
+    #f-canvas {
+      @apply relative z-10 h-dvh! w-full!;
+    }
+
+    .box {
+      @apply absolute max-w-xs;
+
+      p {
+        @apply base-semibold;
+
+        @variant lg {
+          @apply h3-semibold;
+        }
+      }
+    }
+  }
+
+  footer {
+    @apply w-full bg-white py-10 px-6 lg:px-12 -mt-20;
+
+    .footer-top {
+        @apply flex items-center justify-between mb-8;
+
+        .footer-label {
+            @apply text-xs font-medium tracking-widest text-neutral-400 uppercase;
+        }
+
+        .social-icons {
+            @apply flex items-center gap-6;
+
+            a {
+                @apply opacity-60 transition-opacity duration-300 hover:opacity-100;
+
+                img {
+                    @apply w-8 h-8;
+                }
+            }
+        }
+    }
+
+      hr {
+          @apply border-neutral-200;
+      }
+
+      .footer-bottom {
+          @apply flex flex-col gap-4 mt-8 text-sm text-neutral-400 lg:flex-row lg:items-center lg:justify-between;
+
+          .copyright {
+
+              @apply font-normal;
+          }
+
+          nav ul {
+              @apply flex flex-wrap gap-x-8 gap-y-2;
+
+              li a {
+                  @apply text-neutral-400 transition-colors duration-200 hover:text-neutral-900;
+              }
+          }
+      }
+  }
+
+
+}

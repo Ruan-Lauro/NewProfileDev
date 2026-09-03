@@ -1,0 +1,36 @@
+.text {
+  .word {
+    .char {
+      transition: transform 0.33s ease-in-out;
+    }
+    .before {
+      position: relative;
+      .char {
+        transform: translateY(0);
+      }
+    }
+    .after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      .char {
+        transform: translateY(-100%);
+        &:nth-child(even) {
+          transform: translateY(100%);
+        }
+      }
+    }
+    &:hover {
+      .before .char {
+        transform: translateY(100%);
+        &:nth-child(even) {
+          transform: translateY(-100%);
+        }
+      }
+      .after .char {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
