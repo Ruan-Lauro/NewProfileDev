@@ -112,7 +112,7 @@ function Navbar() {
                         Ruan Lauro
                     </a>
                     <button className="w-6 h-6 cursor-pointer text-neutral-400 hover:text-black/80 focus:outline-none sm:hidden flex" aria-label="Toogle Menu" onClick={()=>setIsOpen((prevIsOpen) => !prevIsOpen)} >
-                        <img src={isOpen?"/src/assets/close1.png":"/src/assets/menu1.png"} alt="menu" />
+                        <img src={isOpen?close:menu} alt="menu" />
                     </button>
                     <nav className="sm:flex hidden" >
                         <NavItems onNavigate={() => setIsOpen(false)} />
