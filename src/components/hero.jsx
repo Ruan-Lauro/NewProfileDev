@@ -2,7 +2,7 @@ import gsap from "gsap";
 import {  SplitText } from "gsap/all";
 import {useGSAP} from "@gsap/react";
 import './hero.css'
-import {useRef} from 'react';
+import {useRef, useEffect} from 'react';
 import animation from "../assets/animation.mp4";
 import animationWeb from "../assets/animation.webm";
 
@@ -40,6 +40,18 @@ function Hero() {
         }
     })
 
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        video.muted = true;
+        video.load(); 
+
+        video.play()
+            .then(() => console.log("✅ Vídeo tocando"))
+            .catch((e) => console.error("❌ Erro no vídeo:", e));
+    }, []);
+
     return ( 
         <section id="home" className="flex min-h-screen items-center justify-center ">
             <div className="flex items-center w-full justify-between max-w-7xl max-xl:px-5 max-lg:flex-col max-lg:gap-5" >
@@ -52,7 +64,7 @@ function Hero() {
                 <div className="w-90 sm:w-100 sm:h-60 h-50 xl:w-132 xl:h-80 overflow-hidden">
                     <video
                         ref={videoRef}
-                        className="w-full h-full object-cover" 
+                        className="w-full h-full object-cover mix-blend-multiply" 
                         autoPlay
                         loop
                         muted
