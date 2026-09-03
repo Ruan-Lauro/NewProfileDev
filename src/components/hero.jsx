@@ -3,6 +3,8 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 import {useGSAP} from "@gsap/react";
 import './hero.css'
 
+import animation from "../assets/animation.mp4";
+
 gsap.registerPlugin(SplitText);
 
 function Hero() {
@@ -44,7 +46,7 @@ function Hero() {
                 </div>
                 <div className="w-90 sm:w-100 sm:h-60 h-50 xl:w-132 xl:h-80 overflow-hidden">
                     <video
-                        src="/src/assets/animation.mp4"
+                        src={animation}
                         className="w-full h-full object-cover mix-blend-multiply" 
                         autoPlay
                         loop

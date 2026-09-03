@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import data from "../utils/index";
+import email from "../assets/email.svg";
+import github from "../assets/github.svg";
+import linkedin from "../assets/linkedin.svg";
 
 const Footer = () => {
     const footerRef = useRef(null);
@@ -31,13 +34,13 @@ const Footer = () => {
                 <p className="footer-label">Encontre-me em</p>
                 <div className="social-icons">
                     <a href="https://github.com/Ruan-Lauro" aria-label="Github">
-                        <img src="src/assets/github.svg" alt="Github" />
+                        <img src={github} alt="Github" />
                     </a>
                     <a href="https://www.linkedin.com/in/ruan-lauro-983577216/" aria-label="LinkedIn">
-                        <img src="src/assets/linkedin.svg" alt="LinkedIn" />
+                        <img src={linkedin} alt="LinkedIn" />
                     </a>
                     <a href="mailto:ruanlauromonteiro@gmail.com" aria-label="Email">
-                        <img src="src/assets/email.svg" alt="Email" />
+                        <img src={email} alt="Email" />
                     </a>
                 </div>
             </div>

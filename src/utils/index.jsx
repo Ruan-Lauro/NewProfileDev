@@ -64,14 +64,22 @@ const services = [
   },
 ];
 
+import one from "../assets/performance/performance1.png";
+import two from "../assets/performance/performance2.png";
+import three from "../assets/performance/performance3.png";
+import four from "../assets/performance/performance4.png";
+import five from "../assets/performance/performance5.png";
+import six from "../assets/performance/performance6.png";
+import seven from "../assets/performance/performance7.png";
+
 const performanceImages = [
-    { id: "p1", src: "src/assets/performance/performance1.png", link:'https://github.com/Ruan-Lauro/RAG' },
-    { id: "p2", src: "src/assets/performance/performance2.png", link:'https://github.com/Ruan-Lauro/appleAnimation' },
-    { id: "p3", src: "src/assets/performance/performance3.png", link:'https://github.com/Ruan-Lauro/Igreja' },
-    { id: "p4", src: "src/assets/performance/performance4.png", link:'https://github.com/Ruan-Lauro/MuralVirtualMobile' },
-    { id: "p5", src: "src/assets/performance/performance5.png", link:'#' },
-    { id: "p6", src: "src/assets/performance/performance6.png", link:'https://github.com/Ruan-Lauro/Gobite' },
-    { id: "p7", src: "src/assets/performance/performance7.png", link:'https://github.com/Ruan-Lauro/EvenTicket' },
+    { id: "p1", src: one, link:'https://github.com/Ruan-Lauro/RAG' },
+    { id: "p2", src: two, link:'https://github.com/Ruan-Lauro/appleAnimation' },
+    { id: "p3", src: three, link:'https://github.com/Ruan-Lauro/Igreja' },
+    { id: "p4", src: four, link:'https://github.com/Ruan-Lauro/MuralVirtualMobile' },
+    { id: "p5", src: five, link:'https://github.com/Ruan-Lauro/NewProfileDev' },
+    { id: "p6", src: six, link:'https://github.com/Ruan-Lauro/Gobite' },
+    { id: "p7", src: seven, link:'https://github.com/Ruan-Lauro/EvenTicket' },
 ];
 
 const performanceImgPositions = 
@@ -113,10 +121,11 @@ const performanceImgPositions =
     },
 ];
 
+
 const features = [
     {
         id: 1,
-        icon: "src/assets/feature-icon1.svg",
+        icon: "../assets/feature-icon1.svg",
         highlight: "Associate Software Developer.",
         text: "Desenvolvimento e manutenção de sistemas legados, implementação de melhorias e criação de novas funcionalidades. Modelo de trabalho home office.",
         period: "12/2025 · Metadados Assessoria e Sistemas Ltda, Caxias do Sul – RS",
@@ -125,7 +134,7 @@ const features = [
     },
     {
         id: 2,
-        icon: "src/assets/feature-icon2.svg",
+        icon: "../assets/feature-icon2.svg",
         highlight: "Professor de TI.",
         text: "Professor horista no turno da noite ministrando aulas na área de Tecnologia da Informação, com foco em Desenvolvimento de Sistemas.",
         period: "04/2026 – atual · Senac PI, Picos – PI",
@@ -134,7 +143,7 @@ const features = [
     },
     {
         id: 3,
-        icon: "src/assets/feature-icon3.svg",
+        icon: "../assets/feature-icon3.svg",
         highlight: "Estágio KBR – Front-End.",
         text: "Desenvolvimento e manutenção de sites com suporte técnico, criando soluções funcionais, responsivas e de fácil manutenção.",
         period: "Estágio · KBR",
@@ -143,7 +152,7 @@ const features = [
     },
     {
         id: 4,
-        icon: "src/assets/feature-icon4.svg",
+        icon: "../assets/feature-icon4.svg",
         highlight: "Mural Virtual.",
         text: "Aplicativo mobile para comunicação entre colaboradores de empresas e instituições. Selecionado em programas de startups do Nordeste.",
         period: "Aplicativo Mobile",
@@ -152,7 +161,7 @@ const features = [
     },
     {
         id: 5,
-        icon: "src/assets/feature-icon5.svg",
+        icon: "../assets/feature-icon5.svg",
         highlight: "Sistema para Igreja.",
         text: "Plataforma web com controle de cadastro e gestão financeira para inscrições de eventos, integrando front-end moderno com funcionalidades administrativas.",
         period: "Sistema Web",
@@ -161,7 +170,7 @@ const features = [
     },
     {
         id: 6,
-        icon: "src/assets/feature-icon1.svg",
+        icon: "../assets/feature-icon1.svg",
         highlight: "Financeiro de Lavanderia.",
         text: "Sistema desktop de controle financeiro para lavanderia, trazendo análise financeira mais simples e acessível.",
         period: "Software Desktop",
