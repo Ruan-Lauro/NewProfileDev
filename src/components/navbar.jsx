@@ -1,6 +1,8 @@
 import data from "../utils/index";
 import { useState, useEffect } from "react";
 import gsap from "gsap";
+import close from "../assets/close1.png";
+import menu from "../assets/menu1.png";
 
 const NavItems = ({ onNavigate }) => {
 
