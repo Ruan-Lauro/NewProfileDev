@@ -52,7 +52,7 @@ function Hero() {
                 <div className="w-90 sm:w-100 sm:h-60 h-50 xl:w-132 xl:h-80 overflow-hidden">
                     <video
                         ref={videoRef}
-                        className="w-full h-full object-cover mix-blend-multiply" 
+                        className="w-full h-full object-cover" 
                         autoPlay
                         loop
                         muted
