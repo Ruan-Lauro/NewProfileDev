@@ -1,14 +1,15 @@
 import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
+import {  SplitText } from "gsap/all";
 import {useGSAP} from "@gsap/react";
 import './hero.css'
-
+import {useRef} from 'react';
 import animation from "../assets/animation.mp4";
+import animationWeb from "../assets/animation.webm";
 
 gsap.registerPlugin(SplitText);
 
 function Hero() {
-
+    const videoRef = useRef(null);
     useGSAP(() => {
 
         const text = document.querySelector(".text");
@@ -33,6 +34,10 @@ function Hero() {
             });
         }
         });
+
+        if (videoRef.current) {
+            videoRef.current.muted = true;
+        }
     })
 
     return ( 
@@ -46,13 +51,16 @@ function Hero() {
                 </div>
                 <div className="w-90 sm:w-100 sm:h-60 h-50 xl:w-132 xl:h-80 overflow-hidden">
                     <video
-                        src={animation}
-                        className="w-full h-full object-cover" 
+                        ref={videoRef}
+                        className="w-full h-full object-cover mix-blend-multiply" 
                         autoPlay
                         loop
                         muted
                         playsInline
-                    />
+                    >
+                        <source src={animationWeb} type="video/webm" />
+                        <source src={animation} type="video/mp4" />
+                    </video>
                 </div>
             </div>
 
