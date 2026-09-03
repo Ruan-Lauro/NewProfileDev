@@ -60,7 +60,7 @@ body {
   }
 
   .nav-ul {
-    @apply relative z-20 flex flex-col items-center gap-4 sm:flex-row md:gap-6;
+    @apply relative z-20 flex flex-col items-center gap-4 sm:flex-row md:gap-6 ;
   }
 
   .nav-li {

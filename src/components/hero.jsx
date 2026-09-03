@@ -66,7 +66,7 @@ function Hero() {
                     <h2 className="text-xl sm:text-2xl font-bold text-neutral-600 max-lg:text-center" >Desenvolvedor Full Stack</h2>
                     <p className="sm:text-lg text-gray-600 max-w-100 xl:max-w-130 max-lg:text-center" >Código, criatividade e tecnologia para transformar ideias em realidade.</p>
                 </div>
-                <div className="w-90 sm:w-100 sm:h-60 h-50 xl:w-132 xl:h-80 overflow-hidden">
+                <div className="w-80 sm:w-100 sm:h-60 h-47 xl:w-132 xl:h-80 overflow-hidden">
                     <video
                         ref={videoRef}
                         className="w-full h-full object-cover mix-blend-multiply" 
