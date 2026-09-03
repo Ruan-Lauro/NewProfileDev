@@ -3,9 +3,8 @@ import {  SplitText } from "gsap/all";
 import {useGSAP} from "@gsap/react";
 import './hero.css'
 import {useRef, useEffect} from 'react';
-import animation from "../assets/animation.mp4";
+import animation from "../assets/animation-optimized.mp4";
 import animationWeb from "../assets/animation.webm";
-
 gsap.registerPlugin(SplitText);
 
 function Hero() {
@@ -43,14 +42,20 @@ function Hero() {
     useEffect(() => {
         const video = videoRef.current;
         if (!video) return;
-
         video.muted = true;
+        video.setAttribute("muted", "");
+        video.setAttribute("playsinline", "");
+        
         video.load(); 
+        const playTimeout = setTimeout(() => {
+            video.play()
+                .then(() => console.log("✅ Vídeo tocando"))
+                .catch((e) => console.error("❌ Erro no vídeo:", e));
+        }, 50);
 
-        video.play()
-            .then(() => console.log("✅ Vídeo tocando"))
-            .catch((e) => console.error("❌ Erro no vídeo:", e));
+        return () => clearTimeout(playTimeout);
     }, []);
+
 
     return ( 
         <section id="home" className="flex min-h-screen items-center justify-center ">
@@ -69,9 +74,10 @@ function Hero() {
                         loop
                         muted
                         playsInline
+                        preload="auto"
                     >
-                        <source src={animationWeb} type="video/webm" />
                         <source src={animation} type="video/mp4" />
+                        <source src={animationWeb} type="video/webm" />
                     </video>
                 </div>
             </div>
