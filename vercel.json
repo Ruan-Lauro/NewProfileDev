@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/artigos", "destination": "/index.html" },
+    { "source": "/artigos/:path*", "destination": "/index.html" }
+  ]
+}
