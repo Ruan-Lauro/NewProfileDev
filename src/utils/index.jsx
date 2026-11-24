@@ -26,6 +26,11 @@ const navLinks = [
     name: 'Contato',
     href: '#contact',
   },
+  {
+    id: 6,
+    name: 'Artigos',
+    href: '/artigos',
+  },
 ];
 
 const services = [

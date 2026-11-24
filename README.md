@@ -1,16 +1,24 @@
-# React + Vite
+# Portfólio — Ruan Lauro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite. Além do portfólio (`/`), tem uma área de **artigos e estudos** em `/artigos`.
 
-Currently, two official plugins are available:
+## Publicar um artigo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. `npm run dev` e abra **http://localhost:5173/admin** (o editor só existe em modo dev e só aceita acesso do próprio PC).
+2. Escreva no editor: títulos, listas, código, links, imagens, vídeos (arquivo ou YouTube) e arquivos para download.
+3. Preencha **Materiais para download** e **Referências e estudo** (os alunos podem marcar cada link como estudado).
+4. Clique em **Publicar** (ou **Salvar rascunho**; rascunhos não aparecem na listagem). `Ctrl+S` também salva.
+5. Suba para o ar:
 
-## React Compiler
+   ```bash
+   git add public/content public/uploads
+   git commit -m "artigo: <título>"
+   git push
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Como funciona
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Cada artigo vira `public/content/articles/<slug>.json`; a listagem lê só `public/content/index.json` (metadados), então a página fica leve.
+- Arquivos enviados vão para `public/uploads/<ano-mês>/`. Para vídeos grandes, prefira YouTube: o GitHub recusa arquivos acima de 100 MB.
+- `/artigos` é um chunk separado (~11 KB): não baixa o three.js/gsap da home. O código do editor (`src/admin`, `plugins/articlesAdmin.js`) não entra no build de produção.
+- Rotas `/artigos/*` precisam de fallback para `index.html` no host: já configurado em `vercel.json` (Vercel) e `public/_redirects` (Netlify).

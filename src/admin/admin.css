@@ -1,0 +1,103 @@
+.admin-shell {
+  display: grid;
+  min-height: 100dvh;
+  background: #f7f7f7;
+  color: #262626;
+}
+@media (min-width: 900px) {
+  .admin-shell { grid-template-columns: 17rem 1fr; }
+}
+
+.admin-sidebar {
+  border-right: 1px solid #e5e5e5;
+  background: #f0f0f0;
+  padding: 1.25rem;
+}
+@media (min-width: 900px) {
+  .admin-sidebar { position: sticky; top: 0; height: 100dvh; overflow-y: auto; }
+}
+
+.admin-main { min-width: 0; }
+
+.admin-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px solid #e5e5e5;
+  background: rgba(247, 247, 247, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 0.75rem 1.25rem;
+}
+
+.admin-input {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.6rem;
+  background: #fff;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.admin-input:focus { border-color: #8a8a8a; }
+
+.admin-btn,
+.admin-btn-ghost {
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.admin-btn { background: #262626; color: #fff; }
+.admin-btn:hover { background: #000; }
+.admin-btn-ghost { border: 1px solid #d9d9d9; background: #fff; }
+.admin-btn-ghost:hover { border-color: #a3a3a3; }
+.admin-btn:disabled,
+.admin-btn-ghost:disabled { opacity: 0.5; cursor: wait; }
+
+.admin-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 0.5rem;
+  color: #525252;
+  cursor: pointer;
+}
+.admin-icon-btn:hover { background: #f0f0f0; }
+
+.admin-section-title {
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+}
+
+/* Área editável do Tiptap: usa o mesmo estilo do artigo público. */
+.admin-editor {
+  min-height: 24rem;
+  padding: 1.5rem;
+  outline: none;
+}
+.admin-editor p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: #b5b5b5;
+  pointer-events: none;
+}
+.admin-editor .ProseMirror-selectednode {
+  outline: 3px solid #0071e3;
+  outline-offset: 2px;
+}
