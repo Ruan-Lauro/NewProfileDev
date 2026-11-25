@@ -1,15 +1,81 @@
 [
   {
-    "slug": "algoritmo",
-    "title": "Aprendendo lógica de programação",
-    "summary": "Entendendo como funciona a programação",
-    "cover": "https://dstec.com.br/wp-content/uploads/2017/10/algoritmo.jpg",
+    "slug": "4-estruturas-de-repeticao-em-c",
+    "title": "4º Estruturas de Repetição em C#",
+    "summary": "Lógica de Programação • Fundamentos da Linguagem C#",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSymVXxErymDtrRYxqD-wzwE3OewQNKDzr-a7hYBwkUwQ&s=10",
     "tags": [
-      "Algoritmo",
-      "programação",
-      "aprendendo"
+      "C#",
+      "Lógica",
+      "Programação"
     ],
-    "date": "2026-11-24",
-    "readingTime": 2
+    "date": "2026-11-25",
+    "readingTime": 20
+  },
+  {
+    "slug": "5-arrays-e-colecoes-em-c",
+    "title": "5º Arrays e Coleções em C#",
+    "summary": "Lógica de Programação • Estruturas de Dados • Fundamentos da Linguagem C#",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW_XA8YmOdZfnnVAwigx-plkb4653d5_HQgr2vd9cdfg&s=10",
+    "tags": [
+      "C#",
+      "Lógica",
+      "Programação",
+      "Estrutura de Dados"
+    ],
+    "date": "2026-11-25",
+    "readingTime": 21
+  },
+  {
+    "slug": "6-metodos-e-funcoes-em-c",
+    "title": "6º Métodos e Funções em C#",
+    "summary": "Lógica de Programação • Métodos e Funções em C#",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSymVXxErymDtrRYxqD-wzwE3OewQNKDzr-a7hYBwkUwQ&s=10",
+    "tags": [
+      "C#",
+      "Lógica",
+      "Programação"
+    ],
+    "date": "2026-11-25",
+    "readingTime": 15
+  },
+  {
+    "slug": "estruturas-condicionais-em-c",
+    "title": "3º Estruturas Condicionais em C#",
+    "summary": "Lógica de Programação • Fundamentos da Linguagem C#",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSymVXxErymDtrRYxqD-wzwE3OewQNKDzr-a7hYBwkUwQ&s=10",
+    "tags": [
+      "C#",
+      "Lógica",
+      "Programação"
+    ],
+    "date": "2026-11-25",
+    "readingTime": 14
+  },
+  {
+    "slug": "operadores-em-c",
+    "title": "2º Operadores em C#",
+    "summary": "Lógica de Programação • Fundamentos da Linguagem C#",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSymVXxErymDtrRYxqD-wzwE3OewQNKDzr-a7hYBwkUwQ&s=10",
+    "tags": [
+      "C#",
+      "Lógica",
+      "Programação"
+    ],
+    "date": "2026-11-25",
+    "readingTime": 12
+  },
+  {
+    "slug": "variaveis-em-c",
+    "title": "1º Variáveis em C#",
+    "summary": "Lógica de Programação • Fundamentos da Linguagem C#",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSymVXxErymDtrRYxqD-wzwE3OewQNKDzr-a7hYBwkUwQ&s=10",
+    "tags": [
+      "C#",
+      "Lógica",
+      "Programação"
+    ],
+    "date": "2026-11-25",
+    "readingTime": 9
   }
 ]
