@@ -1,16 +1,24 @@
 import data from "../utils/index";
 import { useState, useEffect } from "react";
-import gsap from "gsap";
 import close from "../assets/close1.png";
 import menu from "../assets/menu1.png";
 
-const NavItems = ({ onNavigate }) => {
+// gsap só é baixado no primeiro hover: na home ele já está carregado e
+// na área de artigos o menu não aumenta o peso inicial da página.
+let gsapPromise;
+const loadGsap = () => (gsapPromise ??= import("gsap").then((m) => m.gsap));
 
-    const handleMouseEnter = (e) => {
+// Links "#secao" só existem na home; fora dela viram "/#secao".
+const resolveHref = (href, linkPrefix) => (href.startsWith("#") ? `${linkPrefix}${href}` : href);
+
+const NavItems = ({ onNavigate, linkPrefix }) => {
+
+    const handleMouseEnter = async (e) => {
         const letters = Array.from(e.currentTarget.children);
 
         if (letters.length < 2) return;
 
+        const gsap = await loadGsap();
         gsap.killTweensOf(letters);
 
         gsap.set(letters, {
@@ -54,7 +62,8 @@ const NavItems = ({ onNavigate }) => {
                 <li key={id} className="nav-li">
 
                     <a
-                        href={href}
+                        href={resolveHref(href, linkPrefix)}
+                        aria-current={href.startsWith("/") && window.location.pathname.startsWith(href) ? "page" : undefined}
                         className="nav-li_a"
                         onClick={onNavigate}
                     >
@@ -85,7 +94,7 @@ const NavItems = ({ onNavigate }) => {
     );
 };
 
-function Navbar() {
+function Navbar({ linkPrefix = "" }) {
 
     const [isOpen, setIsOpen] = useState(false)
     const [hasScrolled, setHasScrolled] = useState(false)
@@ -108,19 +117,19 @@ function Navbar() {
         <header className={`text-white fixed top-0 left-0 right-0 z-50 bg-white rounded-b-xl transition-shadow duration-300 ${hasScrolled ? "shadow-sm" : ""}`} >
             <div className="max-w-7xl mx-auto max-xl:px-5" >
                 <div className="flex justify-between items-center py-5 mx-auto" >
-                    <a href="#home" className="text-neutral-600 font-bold text-xl hover:text-black/80 transition-all duration-300 hover:scale-105" >
+                    <a href={resolveHref("#home", linkPrefix)} className="text-neutral-600 font-bold text-xl hover:text-black/80 transition-all duration-300 hover:scale-105" >
                         Ruan Lauro
                     </a>
                     <button className="w-6 h-6 cursor-pointer text-neutral-400 hover:text-black/80 focus:outline-none sm:hidden flex" aria-label="Toogle Menu" onClick={()=>setIsOpen((prevIsOpen) => !prevIsOpen)} >
                         <img src={isOpen?close:menu} alt="menu" />
                     </button>
                     <nav className="sm:flex hidden" >
-                        <NavItems onNavigate={() => setIsOpen(false)} />
+                        <NavItems linkPrefix={linkPrefix} onNavigate={() => setIsOpen(false)} />
                     </nav>
                 </div>
                 <div className={`nav-sidebar ${isOpen?" max-h-screen":"max-h-0"} `} >
                     <nav className="p-5" >
-                        <NavItems onNavigate={() => setIsOpen(false)} />
+                        <NavItems linkPrefix={linkPrefix} onNavigate={() => setIsOpen(false)} />
                     </nav>
                 </div>
             </div>

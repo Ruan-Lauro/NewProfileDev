@@ -267,3 +267,8 @@ body {
 
 
 }
+
+.nav-li_a[aria-current="page"] {
+  color: rgb(0 0 0 / 0.85);
+  font-weight: 500;
+}

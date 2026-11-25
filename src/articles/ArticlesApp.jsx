@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ArticleList from "./ArticleList.jsx";
 import ArticlePage from "./ArticlePage.jsx";
-import { onLinkClick } from "./utils.js";
+import Navbar from "../components/navbar.jsx";
 import "./articles.css";
 
 const usePath = () => {
@@ -20,23 +20,7 @@ export default function ArticlesApp() {
 
   return (
     <div className="articles-shell">
-      <header className="articles-header">
-        <div className="articles-container flex items-center justify-between py-5">
-          <a href="/" className="text-neutral-600 font-bold text-xl hover:text-black/80 transition-colors">
-            Ruan Lauro
-          </a>
-          <nav className="flex items-center gap-6 text-neutral-600">
-            <a href="/" className="hover:text-black/80 transition-colors">Portfólio</a>
-            <a
-              href="/artigos"
-              onClick={onLinkClick("/artigos")}
-              className={`hover:text-black/80 transition-colors ${slug ? "" : "text-black/80 font-medium"}`}
-            >
-              Artigos
-            </a>
-          </nav>
-        </div>
-      </header>
+      <Navbar linkPrefix="/" />
 
       <main className="articles-container pb-24">
         {slug ? <ArticlePage key={slug} slug={slug} /> : <ArticleList />}
